@@ -13,10 +13,10 @@ ARG BUILDPLATFORM
 RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
 
 WORKDIR /source
-COPY *.csproj .
+COPY worker-new/*.csproj .
 RUN dotnet restore -a $TARGETARCH
 
-COPY . .
+COPY worker-new/. .
 RUN dotnet publish -c release -o /app -a $TARGETARCH --self-contained false --no-restore
 
 # app image
