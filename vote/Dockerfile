@@ -24,8 +24,8 @@ CMD ["python", "app.py"]
 FROM base AS final
 
 # Copy our code from the current folder to the working directory inside the container
-COPY /vote ./
-COPY /vote/.env .
+COPY /vote/vote ./
+COPY /vote/vote/.env .
 
 # Make port 80 available for links and/or publish
 EXPOSE 80
