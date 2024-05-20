@@ -34,6 +34,7 @@ Follow the steps [here](https://docs-test.atmosly.com/docs/clusters/create_clust
 We have an open source project available for the Voting App. 
 
 Under "Projects" module, you will see a folder with the name of Voting App:<br>
+
 ![alt text](images/image-23.png)<br><br>
 
 ### What are Projects:
@@ -50,6 +51,7 @@ You can find more details about the Project module [here](https://docs-test.atmo
 For the application services, you will need to click on the "+" icon in Applications and add Vote microservice as per screenshot below. 
 
 Adding Vote Microservice:
+
 ![alt text](images/image-17.png)
 
 For all other application microservices, i.e. Result and Worker, follow the similat structure as with the Vote microservice. Repo would be considered service's repo. 
@@ -59,6 +61,7 @@ For the database, you will need to click on the "+" icon in Data Sources and add
 
 ![alt text](images/image-18.png)<br><br>
 Once you have added both application and datasource services, it would look like this: <br>
+
 ![alt text](images/image-19.png)
 
 Now, to manage dependency in between applications, you can use environment variables to tell the, for example, Website Service where to find the Database Service. 
@@ -81,12 +84,15 @@ You have two choices for adding environment variables:
 The final screen after the environment variables have been added would look something like this - 
 
 Vote:<br>
+
 ![alt text](images/image-9.png)<br>
 
 Worker:<br>
+
 ![alt text](images/image-1.png)<br>
 
 Result:<br>
+
 ![alt text](images/image-12.png)
 
 Great! Our basic setup is completed. Now, let's create an environment for deploying the application on EKS cluster.
@@ -108,16 +114,21 @@ Voting app (for result, vote and worker services)
     - vote: main
     - worker: main
 
-2. port:<br>
+2. Dockerfile Path:<br>
+    - result/Dockerfile
+    - vote/Dockerfile
+    - worker/Dockerfile
+
+3. port:<br>
     - result: 80
     - vote: 80
     - worker: 80
 
-3. endpoint type: <br>
+4. endpoint type: <br>
     - result: public load balancer
     - vote: public load balancer
     - worker: cluster IP 
 
-4. min-max CPU : 500m-1000m for all application services
+5. min-max CPU : 500m-1000m for all application services
 
-5. min-max memory : 1000mi-2000mi for all application services
+6. min-max memory : 1000mi-2000mi for all application services
