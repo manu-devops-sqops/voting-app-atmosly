@@ -7,7 +7,8 @@ Before we begin:
 Through this document, we will be deploying Voting application on Atmosly. [Listed here](https://docs-test.atmosly.com/docs/atmosly/deploy_your_first_application) is a brief of all the steps we will be following to successfully deploy the application. 
  
 ## About the Voting App
-GitHub URL - https://github.com/dockersamples/example-voting-app. 
+GitHub URL - https://github.com/atmosly/voting-app-atmosly.git. 
+
 This application consists of five microservices -
  - Vote (python) - from where end user would cast a vote
  - Result (react) - where the results of the voting are stored 
@@ -29,9 +30,10 @@ Projects module have three elements:
 1. Applicaton services
 2. DataSource services
 3. Environment Variables <br> 
+
 You can find more details about the Project module [here](https://docs-test.atmosly.com/docs/projects/create_project). 
-### To make a new project: 
-#### Step 1: 
+### To make Voting App project on Atmosly: 
+#### Step 1 : 
 For the application services, you will need to click on the "+" icon in Applications and add Vote microservice as per screenshot below. 
 Adding Vote Microservice:
 
@@ -57,10 +59,12 @@ a. Click on the **Edit Environment Variable** button.<br>
 You have two choices for adding environment variables:
 1. Importing/ selecting the .env file from GitHub branch - by clicking on the **Import** button.
 2. Manually adding it by clicking the **Add** button - in the case where you would like to manually define your variables or add to the list of environment variables, you can also add your variable manually. 
-We will import our variables for the services - 
-1. Vote microservice variables - Click on **Import** button and select 'main' as branch and select .env.vote as the file and click on **Proceed**.
-2. Result microservices variables - Click on **Import** button and select 'main' as branch and select .env.result as the file and click on **Proceed**.
-3. Worker microservice variables - Click on **Import** button and select 'main' as branch and select .env.worker as the file and click on **Proceed**.
+
+We will import our variables for the services: 
+1. Vote microservice variables - Click on **Import** button and select 'main' as branch and select **.env.vote** as the file and click on **Proceed**.
+2. Result microservices variables - Click on **Import** button and select 'main' as branch and select **.env.result** as the file and click on **Proceed**.
+3. Worker microservice variables - Click on **Import** button and select 'main' as branch and select **.env.worker** as the file and click on **Proceed**.
+
 The final screen after the environment variables have been added would look something like this - 
 
 Vote:<br>
@@ -81,7 +85,11 @@ By this time you have:
 1. Successfully integrated a cloud account
 2. Successfully created a cluster
 3. Have a Voting App project
+
 To create environment, follow the steps mentioned [here](https://docs.atmosly.com/docs/environments/create_env) with the information required.
+
+### Application Services:
+
 Please note, you will need to pass the following details to deploy Voting App - 
 Voting app (for result, vote and worker services)
 1. Branch:<br>
@@ -106,3 +114,27 @@ Voting app (for result, vote and worker services)
     - worker: cluster IP 
 5. min-max CPU : 500m-1000m for all application services
 6. min-max memory : 1000mi-2000mi for all application services
+
+### Database Services:
+
+Please note, you will need to pass the following details to deploy the database services for the Voting App (Postgres and Redis)
+
+1. Type:<br>
+    - Postgres: Self Managed
+    - Redis: Self Managed
+
+2. Version:<br>
+    - Postgres: any
+    - Redis: any
+
+3. Nodegroup:<br>
+    - Postgres: default
+    - Redis: default
+
+4. Storage Size:<br>
+    - Postgres: 10GB
+    - Redis: 5GB
+
+5. Username , Password & Dataname:<br>
+    - Postgres: any
+    - Redis: any
