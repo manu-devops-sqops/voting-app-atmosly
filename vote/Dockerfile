@@ -10,6 +10,7 @@ RUN apt-get update && \
 WORKDIR /usr/local/app
 
 # Install our requirements.txt
+RUN pwd
 COPY ./vote/requirements.txt .
 RUN ls
 RUN pip install --no-cache-dir -r requirements.txt
