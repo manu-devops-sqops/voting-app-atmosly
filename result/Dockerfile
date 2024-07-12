@@ -12,13 +12,13 @@ RUN npm install -g nodemon
 RUN npm install dotenv --save
 RUN npm install
 
-COPY reslut/result/package*.json ./
+COPY result/package*.json ./
 
 RUN npm ci && \
  npm cache clean --force && \
  mv /usr/local/app/node_modules /node_modules
 
-COPY result/result .
+COPY result .
 
 ENV PORT 80
 EXPOSE 80
