@@ -12,7 +12,7 @@ RUN npm install -g nodemon
 RUN npm install dotenv --save
 RUN npm install
 
-COPY result/package*.json .
+COPY result/package*.json ./
 
 RUN npm ci && \
  npm cache clean --force && \
