@@ -34,6 +34,7 @@ async.retry(
   function (callback) {
     pool.connect(function (err, client, done) {
       if (err) {
+        console.log("Connection String=====================", dbConnectionString)
         console.error("Waiting for db");
       }
       callback(err, client);
